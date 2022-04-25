@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  backup:
+    build: .
+    environment:
+      - SENTRY_DSN_TOKEN=<DSN>
+      - SERVER_PORT=<PORT>
+      - SERVER_ADDRESS=<ADDR>
+      - SERVER_BACKUP_PATH=/home/homeca/
+      - TZ=Asia/Tehran
+    volumes:
+      - ~/homeca/:/source
+      - ./.ssh/:/root/ssh
